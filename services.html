@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Vakula Software Solutions</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    header { background:#4cb0f4; color:#fff; padding:15px; display:flex; align-items:center;justify-content: center;
+      gap: 15px; }
+    header img { height:50px; margin-right:15px; }
+    nav a { color:#fff; margin:0 10px; text-decoration:none; }
+    .services-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px; padding:40px; }
+    .service-card { background:#f5f5f5; padding:20px; border-radius:10px; text-align:center; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    .service-card h3 { margin-top:0; }
+    .btn { display:inline-block; padding:10px 15px; background:#007BFF; color:#fff; text-decoration:none; border-radius:5px; cursor:pointer; }
+    .btn:hover { background:#0056b3; }
+    .modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); }
+    .modal-content { background:#fff; margin:10% auto; padding:20px; border-radius:10px; width:80%; max-width:600px; position:relative; }
+    .close { position:absolute; top:10px; right:20px; font-size:24px; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="C:\Users\Sai Reddy\Desktop\vakula website\logo.jpg" alt="Vakula Software Solutions Logo">
+    <h1>Vakula Software Solutions</h1>
+    <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="applications.html">Apply</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <section>
+    <h2 style="text-align:center; padding:20px;">Our Services</h2>
+    <div class="services-container">
+
+      <div class="service-card">
+        <h3>Web Designing</h3>
+        <p>Modern, responsive, and user-friendly websites for your business.</p>
+        <button class="btn" onclick="openModal('webDesign')">View Details</button>
+      </div>
+
+      <div class="service-card">
+        <h3>Web Services</h3>
+        <p>Scalable APIs, cloud integration, and backend solutions.</p>
+        <button class="btn" onclick="openModal('webServices')">View Details</button>
+      </div>
+
+      <div class="service-card">
+        <h3>Internships</h3>
+        <p>Explore internship opportunities for students in various domains.</p>
+        <button class="btn" onclick="openModal('internships')">View Details</button>
+      </div>
+
+      <div class="service-card">
+        <h3>Projects</h3>
+        <p>End-to-end project development across multiple domains.</p>
+        <button class="btn" onclick="openModal('projects')">View Details</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Web Design Modal -->
+  <div id="webDesign" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('webDesign')">&times;</span>
+      <h2>Web Designing</h2>
+      <p>We design responsive websites, UI/UX interfaces, and custom business solutions.</p>
+      <button class="btn" onclick="location.href='applications.html'">Apply Now</button>
+    </div>
+  </div>
+
+  <!-- Web Services Modal -->
+  <div id="webServices" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('webServices')">&times;</span>
+      <h2>Web Services</h2>
+      <p>We develop scalable APIs, integrate cloud services, and provide backend solutions.</p>
+      <button class="btn" onclick="location.href='applications.html'">Apply Now</button>
+    </div>
+  </div>
+
+  <!-- Internships Modal -->
+  <div id="internships" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('internships')">&times;</span>
+      <h2>Internships</h2>
+      <p>We provide internships in technology and business streams.</p>
+      <ul>
+        <li><b>BCA / MCA / CEC / B.com / BSC :</b> Software Development, Full Stack, AI/ML, Cloud, Cybersecurity, IoT, Robotics</li>
+        <li><b>BBA / MBA:</b> Digital Marketing, Finance, HR, Data Analytics, SAP, International Business</li>
+      </ul>
+      <h3>Internship Duration </h3>
+      <p>Short Term: 8 Weeks  <br> Long Term: 16 Weeks </p>
+      <p>Includes: Acceptance Letter, Completion Letter, Certificate</p>
+      <button class="btn" onclick="location.href='applications.html'">Apply Now</button>
+    </div>
+  </div>
+
+  <!-- Projects Modal -->
+  <div id="projects" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('projects')">&times;</span>
+      <h2>Projects</h2>
+      <p>We deliver projects in domains such as e-commerce, healthcare, education, and enterprise applications.</p>
+      <button class="btn" onclick="location.href='applications.html'">Apply Now</button>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    window.onclick = function(event) {
+      document.querySelectorAll('.modal').forEach(function(modal) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
